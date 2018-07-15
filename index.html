@@ -8,7 +8,7 @@
   </head>
   <body onload="main()">
     <h1>Welcome to the Monty Hall problem!</h1>
-    <h2>There is three doors. One of them contains win, two of them have loss. You must pick one of them and after that
+    <h2>There are three doors. One of them contains win, two of them have loss. You must pick one of them and after that
     one of the losing doors is opened. You are given the chance to <em>switch</em> your pick if you want to.</h2>
     <h2 id="willyou"> Will you?</h2>
     <div class="start">
@@ -30,6 +30,17 @@
       <div class="grid-cell" id="three" onclick="userPick(3)">
         <p>Third door</p>
       </div>
+    </div>
+
+    <div class="switch-question">
+      <p>Do you want to switch?</p>
+      <button type="button" name="button" onclick="userSwitch('y')">Yes</button>
+      <button type="button" name="button" onclick="userSwitch('n')">No</button>
+    </div>
+
+    <div class="revelation">
+      <p>The moment of truth...</p>
+      <button type="button" name="button" onclick="openDoor()">OPEN THE DOOR!</button>
     </div>
 
 

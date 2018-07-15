@@ -59,6 +59,41 @@ h2{
 
 }
 
-#one{
-
+.switch-question{
+  background-color: #444;
+  position: absolute;
+  top: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 40rem;
+  height: 10rem;
+  text-align: center;
+  box-shadow: 0 0 2rem 0.5rem blue;
+  display: none;
 }
+.revelation{
+  background-color: #444;
+  position: absolute;
+  top: 33%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 40rem;
+  height: 10rem;
+  text-align: center;
+  box-shadow: 0 0 2rem 0.5rem blue;
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+/* EOF */

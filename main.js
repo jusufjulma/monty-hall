@@ -1,16 +1,15 @@
 let doors = [0, 0, 0];
+let doorsId = ["#one", "#two", "#three"];
 let pick = [0, 0, 0];
 
+
 function main() {
-  // doorWin();
+  doorWin();
   // userPick();
   // revealWrong();
   // userSwitch();
   // judgement();
-
 }
-
-
 
 function doorWin() {  // here the winning door is decided
   doors = [0, 0, 0];
@@ -18,7 +17,7 @@ function doorWin() {  // here the winning door is decided
   let winning = Math.floor(Math.random()*3);  // "randomly" of course
   doors[winning] = 1;                         // value 1 given to correct door
   $(".grid-cell").css({"background-color": "#ccc"});  // reset colors
-  colors(winning);  // should not be on final version
+  // colors(winning);  // should not be on final version
 } // end of function
 
 function colors(winning) {
@@ -46,6 +45,14 @@ function colors(winning) {
 function userPick(door) { // here user pics door
   pick = [0, 0, 0];
   pick[door-1] = 1;       // which is then logged to pick-array
+  setTimeout(revealWrong, 500);           // executing next function
+  console.log("What the fuck");
+  setTimeout(bringQuestion, 2000)
+
+}
+
+function bringQuestion() {
+  $(".switch-question").css({"display": "block"})
 }
 
 function revealWrong() {  // this opens ONE WRONG door on random
@@ -83,10 +90,10 @@ function revealWrong() {  // this opens ONE WRONG door on random
       break;
     } // maybe a bit bad design here :D
   } // end of while
+  return 1;
 } // end of function
 
-function userSwitch() {
-  let decision = prompt("Swich or not? (y/n)");
+function userSwitch(decision) {
   switch (decision) {
     case "n":
       console.log("Didn't switch.");
@@ -103,6 +110,8 @@ function userSwitch() {
       break;
     default: console.log("Spede beard. :--D")
   } // end of switch
+  $(".switch-question").css({"display": "none"});
+  $(".revelation").css({"display": "block"})
 } // end of function
 
 function judgement() {
@@ -113,10 +122,20 @@ function judgement() {
   } console.log(finalPick); // end of for
   if (doors[finalPick] == 1){
     console.log("Winner!");
+    $(doorsId[finalPick]).css({"background-color": "#05ff2b"});
   }else{
     console.log("Loser.");
+    $(doorsId[finalPick]).css({"background-color": "#ff0d05"});
+
   }
+
 } // end of function
+
+function openDoor() { // maybe deleted
+  judgement();
+  $(".revelation").css({"display": "none"})
+
+}
 
 
 function log() {
