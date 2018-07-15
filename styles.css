@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Merriweather|Arbutus');
+/* font-family: 'Merriweather', serif;
+font-family: 'IM Fell French Canon SC', serif;
+font-family: 'Arbutus', cursive; */
+
+:root{
+  font-size: 20px;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+body{
+  background-color: #ccc;
+}
+
+h1{
+  text-align: center;
+  font-family: 'IM Fell French Canon SC', serif;
+}
+h2{
+  margin: auto;
+  text-align: justify;
+  width: 80%;
+  font-family: 'Merriweather', serif;
+  font-size: 1rem;
+}
+#willyou{
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.start{text-align: center;}
+.start button{
+  font-size: 1.5rem;
+}
+
+.grid-wrapper{
+  width: 80%;
+  /* border: red dashed; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5rem;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.grid-cell{
+  border: #333 solid;
+  margin: auto;
+  height: 25rem;
+  width: 100%;
+  background-color: #ccc;
+  text-align: center;
+}
+.grid-cell p{
+
+}
+
+#one{
+
+}

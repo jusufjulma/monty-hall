@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MONTY HALL</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="../../jquery/jquery-3.3.1.min.js"></script>
+  </head>
+  <body onload="main()">
+    <h1>Welcome to the Monty Hall problem!</h1>
+    <h2>There is three doors. One of them contains win, two of them have loss. You must pick one of them and after that
+    one of the losing doors is opened. You are given the chance to <em>switch</em> your pick if you want to.</h2>
+    <h2 id="willyou"> Will you?</h2>
+    <div class="start">
+        <button type="button" name="button" onclick="doorWin()">START!</button>
+        <button type="button" name="button" onclick="log()">&nbsp log &nbsp</button>
+        <button type="button" name="button" onclick="revealWrong()">Picked!</button>
+        <button type="button" name="button" onclick="userSwitch()">Time to switch</button>
+        <button type="button" name="button" onclick="judgement()">Judgement</button>
+    </div>
+
+
+    <div class="grid-wrapper">
+      <div class="grid-cell" id="one" onclick="userPick(1)">
+        <p>First door</p>
+      </div>
+      <div class="grid-cell" id="two" onclick="userPick(2)">
+        <p>Second door</p>
+      </div>
+      <div class="grid-cell" id="three" onclick="userPick(3)">
+        <p>Third door</p>
+      </div>
+    </div>
+
+
+  </body>
+  <script type="text/javascript" src="main.js">
+
+  </script>
+</html>
