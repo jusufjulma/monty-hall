@@ -73,7 +73,8 @@ p, button{
   background-color: #651717;
   color: white;
   text-align: center;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   font-size: 500%;
   color: green;
   text-shadow: 0.1rem 0.1rem 0.1rem black;
@@ -81,7 +82,7 @@ p, button{
   animation: pulsating 0.2s ease-out 2s 4 alternate ;
 }
 
-.switch-question, .revelation{
+.switch-question, .revelation, .advice-click-door{
   background-color: #651717;
   position: absolute;
   top: 33%;
@@ -96,7 +97,11 @@ p, button{
   border-radius: 1rem;
   box-shadow: 0 0 2rem 0.5rem rgba(40, 200, 0, 0.8);
   display: none;
-
+}
+#advice-click{
+  position: absolute;
+  top: 10%;
+  height: auto;
 }
 
 button{
