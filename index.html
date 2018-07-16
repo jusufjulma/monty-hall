@@ -7,10 +7,16 @@
     <script src="../../jquery/jquery-3.3.1.min.js"></script>
   </head>
   <body onload="main()">
+
+    <div class="info">
+
     <h1>Welcome to the Monty Hall problem!</h1>
     <h2>There are three doors. One of them contains win, two of them have loss. You must pick one of them and after that
     one of the losing doors is opened. You are given the chance to <em>switch</em> your pick if you want to.</h2>
     <h2 id="willyou"> Will you?</h2>
+
+    </div>
+
     <div class="start">
         <button type="button" name="button" onclick="doorWin()">START!</button>
         <button type="button" name="button" onclick="log()">&nbsp log &nbsp</button>
@@ -22,13 +28,13 @@
 
     <div class="grid-wrapper">
       <div class="grid-cell" id="one" onclick="userPick(1)">
-        <p>First door</p>
+        <p>A</p>
       </div>
       <div class="grid-cell" id="two" onclick="userPick(2)">
-        <p>Second door</p>
+        <p>B</p>
       </div>
       <div class="grid-cell" id="three" onclick="userPick(3)">
-        <p>Third door</p>
+        <p>C</p>
       </div>
     </div>
 
@@ -40,7 +46,7 @@
 
     <div class="revelation">
       <p>The moment of truth...</p>
-      <button type="button" name="button" onclick="openDoor()">OPEN THE DOOR!</button>
+      <button type="button" name="button" onclick="openDoor()">OK</button>
     </div>
 
 

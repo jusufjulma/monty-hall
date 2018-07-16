@@ -16,7 +16,7 @@ function doorWin() {  // here the winning door is decided
   pick = [0, 0, 0];
   let winning = Math.floor(Math.random()*3);  // "randomly" of course
   doors[winning] = 1;                         // value 1 given to correct door
-  $(".grid-cell").css({"background-color": "#ccc"});  // reset colors
+  $(".grid-cell").css({"background-color": "#651717"});  // reset colors
   // colors(winning);  // should not be on final version
 } // end of function
 
@@ -65,19 +65,16 @@ function revealWrong() {  // this opens ONE WRONG door on random
     if (doors[i] == 0 && pick[i] == 0) {  // if door is "lose",
       switch (i) {                        // paint that door grey
         case 0:                           // unless user picked it (&&)
-          $("#one").css({"background-color": "#111"});
-          doors[i] = 2;
-          pick[i] = 2;
+          $("#one").css({"background-color": "#111", "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
+          doors[i] = 2; pick[i] = 2;
           break;
         case 1:
-          $("#two").css({"background-color": "#111"});
-          doors[i] = 2;
-          pick[i] = 2;
+          $("#two").css({"background-color": "#111", "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
+          doors[i] = 2; pick[i] = 2;
           break;
         case 2:
-          $("#three").css({"background-color": "#111"});
-          doors[i] = 2;
-          pick[i] = 2;
+          $("#three").css({"background-color": "#111", "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
+          doors[i] = 2; pick[i] = 2;
           break;
         default:
           console.log("Hingeroostas");
@@ -122,10 +119,12 @@ function judgement() {
   } console.log(finalPick); // end of for
   if (doors[finalPick] == 1){
     console.log("Winner!");
-    $(doorsId[finalPick]).css({"background-color": "#05ff2b"});
+    $(doorsId[finalPick]).css({"background-image": "url(images/win.png)",
+    "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
   }else{
     console.log("Loser.");
-    $(doorsId[finalPick]).css({"background-color": "#ff0d05"});
+    $(doorsId[finalPick]).css({"background-image": "url(images/lose.png)",
+    "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
 
   }
 

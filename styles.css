@@ -13,7 +13,18 @@ html, body{
   margin: 0 0 0 0;
 }
 body{
-  background-color: #ccc;
+  position: fixed;
+  background-color: #fff;
+  background-image: url(images/back.png);
+  background-blend-mode: hard-light;
+}
+
+.info{
+  width: auto;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: rgba(40, 200, 0, 0.8);
+  padding: 0.2rem;
 }
 
 h1{
@@ -27,14 +38,21 @@ h2{
   font-family: 'Merriweather', serif;
   font-size: 1rem;
 }
+
+p, button{
+  font-family: 'Merriweather', serif;
+}
+
 #willyou{
   text-align: center;
   margin: 1rem auto;
+  font-family: 'IM Fell French Canon SC', serif;
+  font-size: 1.5rem;
 }
 
-.start{text-align: center;}
-.start button{
-  font-size: 1.5rem;
+.start{
+  text-align: center;
+  display: none;
 }
 
 .grid-wrapper{
@@ -48,51 +66,56 @@ h2{
 }
 
 .grid-cell{
-  border: #333 solid;
+  border: #270909 solid 1rem;
   margin: auto;
   height: 25rem;
   width: 100%;
-  background-color: #ccc;
+  background-color: #651717;
+  color: white;
   text-align: center;
-}
-.grid-cell p{
+  background-size: contain;
+  font-size: 500%;
+  color: green;
+  text-shadow: 0.1rem 0.1rem 0.1rem black;
 
+  animation: pulsating 0.2s ease-out 2s 4 alternate ;
 }
 
-.switch-question{
-  background-color: #444;
+.switch-question, .revelation{
+  background-color: #651717;
   position: absolute;
   top: 33%;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  width: 40rem;
-  height: 10rem;
+  width: 25rem;
+  height: 12rem;
+  font-size: 2rem;
   text-align: center;
-  box-shadow: 0 0 2rem 0.5rem blue;
+  border-radius: 1rem;
+  box-shadow: 0 0 2rem 0.5rem rgba(40, 200, 0, 0.8);
   display: none;
-}
-.revelation{
-  background-color: #444;
-  position: absolute;
-  top: 33%;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 40rem;
-  height: 10rem;
-  text-align: center;
-  box-shadow: 0 0 2rem 0.5rem blue;
-  display: none;
+
 }
 
+button{
 
+  font-size: 2rem;
+  width: 5rem;
+  margin: 0 2rem 0.2rem 2rem;
+  border-radius: 0.5rem;
+  border-style: hidden;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.8);
+}
 
-
-
-
+@keyframes pulsating{
+  /* 0% {border-color: #270909;}
+  100% {border-color: #230303;} */
+  0% {box-shadow: none;}
+  100% {box-shadow: 0 0 2rem 0.5rem rgba(40, 200, 0, 0.8);}
+}
+/* animation: pulsating 0.5s infinite; */
 
 
 
