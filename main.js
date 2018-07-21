@@ -19,7 +19,7 @@ let hint = () =>{       //  if user is stuck on the beginning
 }
 
 function doorWin() {  // here the winning door is decided
-  doors = [0, 0, 0];
+  doors = [0, 0, 0];  // initializing the starting values
   pick = [0, 0, 0];
   let winning = Math.floor(Math.random()*3);  // "randomly" of course
   doors[winning] = 1;                         // value 1 given to correct door
@@ -29,7 +29,7 @@ function doorWin() {  // here the winning door is decided
   // colors(winning);  // should not be on final version
 } // end of function
 
-function colors(winning) {
+function colors(winning) {          // helps testing to know which door wins
   switch (winning) {                                  // revealing winning door
     case 0:
         $("#one").css({"background-color": "#05ff2b"});
@@ -51,15 +51,16 @@ function colors(winning) {
   }
 } // end of fucntion
 
-function userPick(door) { // here user pics door
-  hintNeeded = 0;
+function userPick(door) { // here user picks door
+  hintNeeded = 0;         // disable hint if user clicks on door
   pick = [0, 0, 0];
   let selectedDoor = door-1;    // this was necessary to get selection coloring
   pick[selectedDoor] = 1;       // which is then logged to pick-array
   $(doorsId[selectedDoor]).css({"box-shadow": "0 0 2rem 0.5rem rgba(200, 40, 0, 0.8)"})
+  $(".disable-clicking").css({"display": "block"});
   setTimeout(revealWrong, 500);           // executing next function
   console.log("What the fuck");
-  setTimeout(bringQuestion, 2000)
+  setTimeout(bringQuestion, 1000)
   $(".advice-click-door").css({"display": "none"});
 
 }
@@ -131,7 +132,10 @@ function userSwitch(decision) {
   $(".revelation").css({"display": "block"})
 } // end of function
 
+// let bringRetry = () => {$(".retry-box").css({"display": "block"})}
+
 function judgement() {
+  $(".revelation").css({"display": "none"})
   let finalPick = 4;
   let finalDoor = 4;
   for (i = 0; i < pick.length; i++){
@@ -147,15 +151,24 @@ function judgement() {
     "color": "rgba(0, 0, 0, 0)", "text-shadow": "none"});
 
   }
+  // $(".retry-box").css({"display": "block"});
+  let bringRetry = () => {$(".retry-box").css({"display": "block"})}
+  setTimeout(bringRetry, 2000);
 
 } // end of function
 
-function openDoor() { // maybe deleted
-  judgement();
-  $(".revelation").css({"display": "none"})
+function retry(){
+  $(doorsId[0]).css({"box-shadow": "none", "background-image": "none",
+  "color": "green", "text-shadow": "0.1rem 0.1rem 0.1rem black"});     // reset
+  $(doorsId[1]).css({"box-shadow": "none", "background-image": "none", // styling
+  "color": "green", "text-shadow": "0.1rem 0.1rem 0.1rem black"});
+  $(doorsId[2]).css({"box-shadow": "none", "background-image": "none",
+  "color": "green", "text-shadow": "0.1rem 0.1rem 0.1rem black"});
 
+  $(".retry-box").css({"display": "none"});
+  $(".disable-clicking").css({"display": "none"});
+  doorWin()
 }
-
 
 function log() {
   console.log("This door wins: "+doors);
